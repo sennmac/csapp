@@ -1,7 +1,24 @@
 # Week 1 Notes
 
 - Day 1:
+  - 做了什么：运行 `make test`，并执行 `bit_print / shift_behavior / overflow_check / float_bits` 四个 demo。
+  - 关键观察：本机（Apple clang/macOS）对 `int32_t` 负数右移表现为算术右移；`-4 >> 2 == -1`，而同位模式按 `uint32_t` 右移会高位补 0。
+  - 关键观察：`INT32_MAX + 1` 和 `INT32_MIN + (-1)` 发生溢出，`add_ok_int32` 能正确识别“同号相加、结果异号”。
+  - 关键观察：IEEE754 单精度中，`exp=0xff && frac=0` 是 `inf`，`exp=0xff && frac!=0` 是 `nan`。
+  - 明日衔接：开始做 2-3 道基础 bit 题（掩码/异或/取反），每题补 1 句不变量说明。
 - Day 2:
+  - 做了什么：完成 `p01_bit_xor`、`p02_tmin`、`p03_is_tmax`。
+  - 卡点：`isTmax` 需要排除 `x=-1` 的干扰（`x+1=0` 的特殊情况）。
+  - 结论：判断类题目先抓“边界值 + 反例”最稳（`Tmax/Tmin/-1/0`）。
 - Day 3:
+  - 做了什么：完成 `p04_all_odd_bits`、`p05_negate`、`p06_is_ascii_digit`。
+  - 卡点：区间判断要写成“下界非负 + 上界非负”两段符号检测。
+  - 结论：掩码题先写目标位图，再用 `&` + 比较判断是否覆盖完整。
 - Day 4:
+  - 做了什么：完成 `p07_conditional`、`p08_is_less_or_equal`、`p09_add_ok`。
+  - 卡点：`x <= y` 不能只看 `y-x`，跨符号时会误判，必须先分符号。
+  - 结论：溢出判定统一模板是“同号相加且结果异号”。
 - Day 5:
+  - 做了什么：完成 `p10_float_scale2` 并复盘 IEEE754 的 normal/subnormal/NaN/Inf。
+  - 自测题：手算并解释了 `8/9/10` 的 `sign/exp/frac`，以及 `13.167`、`0.00000375` 的编码过程。
+  - 结论：float 位级题先分三类（特殊值/非规格化/规格化）再分别写分支。

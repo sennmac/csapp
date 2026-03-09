@@ -9,7 +9,7 @@ static uint32_t f2u(float f) {
 }
 
 int main(void) {
-  float vals[] = {0.0f, -0.0f, 1.0f, -1.0f, 0.5f, 2.0f, 3.1415926f, 1.0f/0.0f, 0.0f/0.0f};
+  float vals[] = {0.0f, -0.0f, 1.0f, -1.0f, 0.5f, 2.0f, 3.1415926f, 1.0f/0.0f, 0.0f/0.0f, 8,9,10};
   int n = (int)(sizeof(vals)/sizeof(vals[0]));
 
   for (int i = 0; i < n; i++) {
