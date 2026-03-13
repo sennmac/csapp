@@ -21,3 +21,19 @@ Day 5：整理复盘，形成“访问模式优化模板”：循环顺序、步
 - 主读：第 6 章《存储器层次结构》
 - 重点小节：局部性原理、cache 组织与命中/缺失、写策略、不同访问模式的性能差异
 - 配套：第 5 章《优化程序性能》（循环优化、内存访问顺序、blocking 思想）
+
+## 本周文件与命令
+- Day 1：`bench.c`（row-major/col-major + 初步 transpose 对比）
+- Day 2：`cache_sim.c` + `traces/sample.trace`（简化 cache 模拟器）
+- Day 3：`transpose_baseline.c`（baseline transpose）
+- Day 4：`transpose_blocking.c`（blocking 优化）
+
+在 `weeks/week2` 目录执行：
+
+```bash
+make all
+make day1
+make day2
+make day3
+make day4
+```
