@@ -1,0 +1,212 @@
+{
+  "main": {
+    "id": "7898cca055993892",
+    "type": "split",
+    "children": [
+      {
+        "id": "72902c66c00d2a12",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f08e5cc65657b318",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01 Daily/2026-03-16 星期一.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "2026-03-16 星期一"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "508199350dab703d",
+    "type": "split",
+    "children": [
+      {
+        "id": "3da98ddff170f64d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "910d6dc4763d9c0d",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "文件列表"
+            }
+          },
+          {
+            "id": "3efb49bdae769dc0",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "搜索"
+            }
+          },
+          {
+            "id": "fd8bb85441de1136",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "书签"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "54cbea9d299250d0",
+    "type": "split",
+    "children": [
+      {
+        "id": "f46224a1757f8d7f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c68f83f7a0057e13",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "01 Daily/2026-03-16.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "2026-03-16 的反向链接列表"
+            }
+          },
+          {
+            "id": "4c3b410f04c83414",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "01 Daily/2026-03-16.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "2026-03-16 的出链列表"
+            }
+          },
+          {
+            "id": "057df22e2c9bbe9b",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "标签"
+            }
+          },
+          {
+            "id": "8168d5422e56bbf3",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency",
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-archive",
+              "title": "添加笔记属性"
+            }
+          },
+          {
+            "id": "7a6f9b2111df7bb9",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "01 Daily/2026-03-16.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "2026-03-16 的大纲"
+            }
+          },
+          {
+            "id": "036caab4e2626246",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": false
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "daily-notes:打开/创建今天的日记": false,
+      "templates:插入模板": false,
+      "command-palette:打开命令面板": false,
+      "bases:新建数据库": false,
+      "templater-obsidian:Templater": false
+    }
+  },
+  "active": "f08e5cc65657b318",
+  "lastOpenFiles": [
+    "07 Templates/Daily Template.md",
+    "01 Daily/2026-03-16 星期一.md",
+    "01 Daily/2026-03-16.md",
+    "01 Daily/未命名.md",
+    "2026-03-16.md",
+    "未命名.canvas",
+    "Home.md",
+    "README.md",
+    "07 Templates/Tech Note Template.md",
+    "07 Templates/Project Template.md",
+    "04 Notes/标签规范.md",
+    "03 Areas/Backend.md"
+  ]
+}

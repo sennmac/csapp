@@ -1,0 +1,8 @@
+{
+  "templates_folder": "07 Templates",
+  "trigger_on_file_creation": false,
+  "auto_jump_to_cursor": true,
+  "enable_system_commands": false,
+  "shell_path": "",
+  "timeout": 5
+}
