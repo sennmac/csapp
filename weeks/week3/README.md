@@ -7,6 +7,11 @@
 - 1 个自制 mini-bomb（>=3 关），并写出解题记录
 - `notes.md`
 
+## 本周文件
+- `mini_bomb.c`：4 关 mini-bomb，覆盖字符串、循环、`switch`、递归
+- `mini_bomb_solve.md`：解题记录模板
+- `Makefile`：`make` / `make run` / `make run-solution` / `make disasm`
+
 ## 关联 CSAPP 章节
 - 主读：第 3 章《程序的机器级表示》
 - 重点小节：数据格式、过程调用与栈帧、控制流、数组与指针在汇编中的映射
