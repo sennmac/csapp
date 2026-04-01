@@ -1,0 +1,5 @@
+pwd
+cd minish
+pwd
+echo path-search-still-works
+exit

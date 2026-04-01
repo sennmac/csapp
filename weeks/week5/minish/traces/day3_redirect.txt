@@ -1,0 +1,3 @@
+/bin/echo redirected-output > /tmp/week5_redirect.txt
+/bin/cat /tmp/week5_redirect.txt
+exit

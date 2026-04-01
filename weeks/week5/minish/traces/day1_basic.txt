@@ -1,0 +1,4 @@
+pwd
+/bin/echo hello-week5
+help
+exit

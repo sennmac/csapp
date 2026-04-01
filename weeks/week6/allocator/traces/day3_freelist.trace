@@ -1,0 +1,6 @@
+# Day 3: after first-fit reuse is implemented, c should reuse a's old block.
+alloc a 32
+alloc b 32
+free a
+alloc c 24
+dump

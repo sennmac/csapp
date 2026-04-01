@@ -1,0 +1,5 @@
+GET http://127.0.0.1:8000/home.html HTTP/1.0
+Host: 127.0.0.1:8000
+X-Debug: week7
+Accept: */*
+

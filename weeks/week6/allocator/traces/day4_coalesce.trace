@@ -1,0 +1,7 @@
+# Day 4: after coalescing, c should fit into merged free space.
+alloc a 40
+alloc b 40
+free a
+free b
+alloc c 64
+dump

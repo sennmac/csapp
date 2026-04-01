@@ -1,0 +1,7 @@
+# Day 2: bump allocator should only move forward.
+alloc a 24
+alloc b 40
+dump
+free a
+alloc c 16
+dump
