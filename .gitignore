@@ -1,0 +1,6 @@
+# Compiled binaries
+*.o
+*.dSYM/
+labs/proxylab/proxylab-handout/tiny/tiny
+labs/proxylab/proxylab-handout/tiny/cgi-bin/adder
+weeks/week7/proxy/proxy
