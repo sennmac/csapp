@@ -7,7 +7,7 @@ TARGET=proxy/proxy
 all: $(TARGET)
 
 $(TARGET): proxy/proxy.c
-	$(CC) $(CFLAGS) -o $@ $<
+	$(CC) $(CFLAGS) -o $@ $< -lpthread
 
 tiny:
 	$(MAKE) -C ../../labs/proxylab/proxylab-handout/tiny
