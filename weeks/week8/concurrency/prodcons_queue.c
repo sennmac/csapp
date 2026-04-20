@@ -6,14 +6,18 @@
 
 enum { QUEUE_CAPACITY = 8 };
 
+/*
+ * 有界环形队列：容量 QUEUE_CAPACITY
+ * 一把 mutex 保护所有共享字段，两个条件变量协调生产者/消费者
+ */
 struct Queue {
-  int data[QUEUE_CAPACITY];
-  int head;
-  int tail;
-  int count;
-  pthread_mutex_t lock;
-  pthread_cond_t not_empty;
-  pthread_cond_t not_full;
+  int data[QUEUE_CAPACITY];  /* 环形缓冲区 */
+  int head;                  /* 消费者读取位置 */
+  int tail;                  /* 生产者写入位置 */
+  int count;                 /* 当前元素数量 */
+  pthread_mutex_t lock;      /* 保护 head/tail/count/data */
+  pthread_cond_t not_empty;  /* 通知消费者：队列有数据了 */
+  pthread_cond_t not_full;   /* 通知生产者：队列有空位了 */
 };
 
 struct ProducerArgs {
@@ -43,14 +47,22 @@ static void queue_destroy(struct Queue *queue) {
 
 static void queue_push(struct Queue *queue, int value) {
   pthread_mutex_lock(&queue->lock);
+
+  /*
+   * 用 while 而非 if：cond_wait 可能虚假唤醒（spurious wakeup），
+   * 醒来后必须重新检查条件，否则可能往满队列里写
+   */
   while (queue->count == QUEUE_CAPACITY) {
+    /* 原子地：释放 lock → 睡眠 → 被唤醒后重新持有 lock */
     pthread_cond_wait(&queue->not_full, &queue->lock);
   }
 
+  /* 临界区：写数据并推进 tail 指针 */
   queue->data[queue->tail] = value;
   queue->tail = (queue->tail + 1) % QUEUE_CAPACITY;
   queue->count += 1;
 
+  /* 通知一个正在等 not_empty 的消费者：队列有数据了 */
   pthread_cond_signal(&queue->not_empty);
   pthread_mutex_unlock(&queue->lock);
 }
@@ -59,14 +71,18 @@ static int queue_pop(struct Queue *queue) {
   int value;
 
   pthread_mutex_lock(&queue->lock);
+
+  /* 同理用 while：醒来后可能队列又被别的消费者取空了 */
   while (queue->count == 0) {
     pthread_cond_wait(&queue->not_empty, &queue->lock);
   }
 
+  /* 临界区：读数据并推进 head 指针 */
   value = queue->data[queue->head];
   queue->head = (queue->head + 1) % QUEUE_CAPACITY;
   queue->count -= 1;
 
+  /* 通知一个正在等 not_full 的生产者：队列有空位了 */
   pthread_cond_signal(&queue->not_full);
   pthread_mutex_unlock(&queue->lock);
   return value;
@@ -158,6 +174,10 @@ int main(int argc, char **argv) {
     pthread_join(producer_threads[i], NULL);
   }
 
+  /*
+   * 毒丸（poison pill）：每个消费者一颗
+   * 消费者收到 value < 0 就退出循环，保证干净关闭
+   */
   for (i = 0; i < consumer_count; ++i) {
     queue_push(&queue, -1);
   }
